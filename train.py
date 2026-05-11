@@ -1,3 +1,4 @@
+from isaacgym import gymapi
 import torch
 import torch.optim as optim
 
