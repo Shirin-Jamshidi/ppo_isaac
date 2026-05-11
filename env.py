@@ -25,8 +25,8 @@
 #     return env, obs_dim, act_dim
 
 
-import torch
 from isaacgym import gymapi, gymtorch
+import torch
 import os
 
 
