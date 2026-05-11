@@ -23,4 +23,3 @@ def make_env(num_envs, device):
     act_dim = 1
     env = DummyEnv(num_envs, obs_dim, act_dim, device)
     return env, obs_dim, act_dim
-``
