@@ -45,8 +45,9 @@ class IsaacCartpoleEnv:
         sim_params.use_gpu_pipeline = True
 
         sim_params.physx.use_gpu = True
-        sim_params.physx.num_solver_iterations = 4
         sim_params.physx.num_position_iterations = 8
+        sim_params.physx.num_velocity_iterations = 1
+
 
         compute_id = 0
         graphics_id = -1  # ❗ no rendering → shared-GPU safe
