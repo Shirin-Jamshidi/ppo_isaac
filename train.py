@@ -21,7 +21,16 @@ def main():
 
     buffer = RolloutBuffer(num_steps, num_envs, obs_dim, act_dim, device)
 
-    obs = env.reset()
+    # obs = env.reset() # For the dummy env
+    next_obs, reward, done = env.step(action)
+
+    # reset finished envs
+    if done.any():
+        reset_obs = env.reset()
+        next_obs = torch.where(done.unsqueeze(-1) > 0, reset_obs, next_obs)
+
+    buffer.add(obs, action, logprob, reward, done, value)
+    obs = next_obs
 
     for it in range(total_iterations):
         buffer.reset()
