@@ -118,8 +118,8 @@ class IsaacCartpoleEnv:
 
     def _get_obs(self):
         # [cart_pos, cart_vel, pole_angle, pole_vel]
-        return self.dof_state_tensor.view(self.num_envs, -1)
-
+        # return self.dof_state_tensor.view(self.num_envs, -1)
+        return self.dof_state_tensor.view(self.num_envs, -1).cpu() # For testing without GPU
     def _compute_reward(self, obs):
         pole_angle = obs[:, 2]
         return 1.0 - pole_angle.abs()

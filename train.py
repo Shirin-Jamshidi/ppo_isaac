@@ -9,8 +9,8 @@ from env import make_env
 
 
 def main():
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-
+    # device = "cuda" if torch.cuda.is_available() else "cpu"
+    device = "cpu" # For testing without GPU
     num_envs = 128
     num_steps = 64
     total_iterations = 50
