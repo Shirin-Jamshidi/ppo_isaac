@@ -42,9 +42,9 @@ class IsaacCartpoleEnv:
         sim_params.gravity = gymapi.Vec3(0.0, 0.0, -9.81)
         sim_params.dt = 1.0 / 60.0
         sim_params.substeps = 2
-        sim_params.use_gpu_pipeline = True
+        sim_params.use_gpu_pipeline = False # ❗ no GPU pipeline → shared-GPU safe
 
-        sim_params.physx.use_gpu = True
+        sim_params.physx.use_gpu = False # ❗ no GPU physx → shared-GPU safe
         sim_params.physx.num_position_iterations = 8
         sim_params.physx.num_velocity_iterations = 1
 
