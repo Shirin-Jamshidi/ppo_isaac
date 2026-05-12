@@ -104,3 +104,6 @@ def main():
         print(f"Iteration {it + 1}, Loss: {loss:.4f}")
 
     print("✅ PPO training finished successfully.")
+
+if __name__ == "__main__":
+      main()
