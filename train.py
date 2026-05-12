@@ -60,6 +60,7 @@ import torch.optim as optim
 from model import ActorCritic
 from buffer import RolloutBuffer
 from ppo import ppo_update
+from env import make_env
 
 def main():
     device = "cpu"  # PPO on CPU (required for RTX 5090)
