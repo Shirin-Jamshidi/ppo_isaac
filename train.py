@@ -53,6 +53,13 @@
 
 # if __name__ == "__main__":
 #     main()
+from isaacgym import gymapi
+import torch
+import torch.optim as optim
+
+from model import ActorCritic
+from buffer import RolloutBuffer
+from ppo import ppo_update
 
 def main():
     device = "cpu"  # PPO on CPU (required for RTX 5090)
